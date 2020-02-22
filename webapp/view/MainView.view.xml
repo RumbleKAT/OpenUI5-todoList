@@ -1,11 +1,80 @@
  <mvc:View controllerName="com.myorg.todoList.controller.MainView"
-	displayBlock="true"
 	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f"
+    xmlns:card="sap.f.cards"
+    xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+    displayBlock="true"
+    height="100%">
 	<App id="idAppControl">
 		<pages>
 			<Page title="{i18n>title}">
-				<content></content>
+				<content>
+ 				<l:VerticalLayout content="{
+					 path : 'todoList>/', 
+					 filters : [ 
+				 		{ path : 'type', operator : 'EQ', value1 : 'todo' }
+					]
+				 }" width="33%">
+					<f:Card
+					class="sapUiMediumMargin"
+					width="300px">
+						<f:header>
+							<card:Header
+								title="{todoList>title}"
+								subtitle="{todoList>name}"/>
+						</f:header>
+						<f:content>
+							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
+								<Text text="{todoList>description}"/>
+							</VBox>
+						</f:content>
+					</f:Card>
+				</l:VerticalLayout>
+				<l:VerticalLayout content="{
+					 path : 'todoList>/', 
+					 filters : [ 
+				 		{ path : 'type', operator : 'EQ', value1 : 'doing' }
+					]
+				 }" width="33%">
+					<f:Card
+					class="sapUiMediumMargin"
+					width="300px">
+						<f:header>
+							<card:Header
+								title="{todoList>title}"
+								subtitle="{todoList>name}"/>
+						</f:header>
+						<f:content>
+							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
+								<Text text="{todoList>description}"/>
+							</VBox>
+						</f:content>
+					</f:Card>
+				</l:VerticalLayout>
+				<l:VerticalLayout content="{
+					 path : 'todoList>/', 
+					 filters : [ 
+				 		{ path : 'type', operator : 'EQ', value1 : 'done' }
+					]
+				 }" width="33%">
+					<f:Card
+					class="sapUiMediumMargin"
+					width="300px">
+						<f:header>
+							<card:Header
+								title="{todoList>title}"
+								subtitle="{todoList>name}"/>
+						</f:header>
+						<f:content>
+							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
+								<Text text="{todoList>description}"/>
+							</VBox>
+						</f:content>
+					</f:Card>
+				</l:VerticalLayout>
+				</content>
 			</Page>
 		</pages>
 	</App>

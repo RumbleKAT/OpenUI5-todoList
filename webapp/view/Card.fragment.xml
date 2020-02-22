@@ -1,0 +1,25 @@
+<core:FragmentDefinition 
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f"
+    xmlns:card="sap.f.cards"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    height="100%">
+
+    <f:Card
+        class="sapUiMediumMargin"
+        width="300px">
+        <f:header>
+            <card:Header
+                title="{title}"
+                subtitle="{name}"/>
+        </f:header>
+        <f:content>
+            <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
+                <Text text="{description}"/>
+            </VBox>
+        </f:content>
+    </f:Card>
+    
+</core:FragmentDefinition>
