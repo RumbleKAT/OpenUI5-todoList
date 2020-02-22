@@ -1,0 +1,11 @@
+{
+  "generator-easy-ui5": {
+    "platform": "Static webserver",
+    "ui5libs": "Local resources (OpenUI5)",
+    "newdir": true,
+    "projectname": "todoList",
+    "namespace": "com.myorg",
+    "viewtype": "XML",
+    "viewname": "MainView"
+  }
+}
