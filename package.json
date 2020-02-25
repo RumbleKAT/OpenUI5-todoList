@@ -14,18 +14,19 @@
                 "build:ui": "ui5 build --a "
         },
         "dependencies": {
+                "@openui5/sap.f": "^1.74.0",
+                "@openui5/sap.m": "^1.73.1",
                 "@openui5/sap.ui.core": "^1.73.1",
                 "@openui5/sap.ui.layout": "^1.73.1",
                 "@openui5/themelib_sap_belize": "^1.73.1",
-                "@openui5/sap.m": "^1.73.1",
                 "shx": "^0.3.2"
         },
         "devDependencies": {
-                "@ui5/cli": "^1.12.1",
+                "@ui5/cli": "^1.14.0",
+                "eslint": "^6.7.2",
                 "karma": "^4.4.1",
                 "karma-chrome-launcher": "^3.1.0",
                 "karma-coverage": "^2.0.1",
-                "karma-ui5": "^1.1.0",
-                "eslint": "^6.7.2"
+                "karma-ui5": "^1.1.0"
         }
 }

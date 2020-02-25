@@ -1,8 +1,8 @@
  <mvc:View controllerName="com.myorg.todoList.controller.MainView"
 	xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns:f="sap.f"
-    xmlns:card="sap.f.cards"
+	xmlns:f="sap.f"
+	xmlns:card="sap.f.cards"
     xmlns:core="sap.ui.core"
 	xmlns:l="sap.ui.layout"
     displayBlock="true"
@@ -28,6 +28,32 @@
 						<f:content>
 							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
 								<Text text="{todoList>description}"/>
+									<FlexBox
+										alignItems="Center"
+										justifyContent="SpaceBetween">
+										<items>
+											<Button type="Accept"
+											icon="sap-icon://edit" 
+											press="onPress">										
+										</Button>
+										<Button type="Reject"
+											icon="sap-icon://accept"
+											press="onPress">
+										</Button>
+										</items>
+									</FlexBox>
+									<!-- <HBox>
+										<Button type="Accept"
+											icon="sap-icon://edit" 
+											press="onPress"
+											ariaDescribedBy="acceptButtonDescription genericButtonDescription">										
+										</Button>
+										<Button type="Reject"
+											icon="sap-icon://accept"
+											press="onPress"
+											ariaDescribedBy="rejectButtonDescription genericButtonDescription">
+										</Button>
+									</HBox> -->
 							</VBox>
 						</f:content>
 					</f:Card>
