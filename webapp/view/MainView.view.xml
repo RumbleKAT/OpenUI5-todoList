@@ -19,7 +19,8 @@
 				 }" width="33%">
 					<f:Card
 					class="sapUiMediumMargin"
-					width="300px">
+					width="300px"
+					>
 						<f:header>
 							<card:Header
 								title="{todoList>title}"
@@ -30,30 +31,19 @@
 								<Text text="{todoList>description}"/>
 									<FlexBox
 										alignItems="Center"
+										direction="Column"
 										justifyContent="SpaceBetween">
-										<items>
+										<items id="{todoList>id}">
 											<Button type="Accept"
-											icon="sap-icon://edit" 
-											press="onPress">										
-										</Button>
-										<Button type="Reject"
-											icon="sap-icon://accept"
-											press="onPress">
-										</Button>
+												icon="sap-icon://accept" 
+												press="onAccept">										
+											</Button>
+											<Button type="Reject"
+												icon="sap-icon://delete"
+												press="onDelete">
+											</Button>
 										</items>
 									</FlexBox>
-									<!-- <HBox>
-										<Button type="Accept"
-											icon="sap-icon://edit" 
-											press="onPress"
-											ariaDescribedBy="acceptButtonDescription genericButtonDescription">										
-										</Button>
-										<Button type="Reject"
-											icon="sap-icon://accept"
-											press="onPress"
-											ariaDescribedBy="rejectButtonDescription genericButtonDescription">
-										</Button>
-									</HBox> -->
 							</VBox>
 						</f:content>
 					</f:Card>
@@ -66,7 +56,8 @@
 				 }" width="33%">
 					<f:Card
 					class="sapUiMediumMargin"
-					width="300px">
+					width="300px"
+					>
 						<f:header>
 							<card:Header
 								title="{todoList>title}"
@@ -75,6 +66,21 @@
 						<f:content>
 							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
 								<Text text="{todoList>description}"/>
+									<FlexBox
+										alignItems="Center"
+										direction="Column"
+										justifyContent="SpaceBetween">
+										<items id="{todoList>id}">
+											<Button type="Accept"
+												icon="sap-icon://accept" 
+												press="onAccept">										
+											</Button>
+											<Button type="Reject"
+												icon="sap-icon://delete"
+												press="onDelete">
+											</Button>
+										</items>
+									</FlexBox>
 							</VBox>
 						</f:content>
 					</f:Card>

@@ -12,6 +12,39 @@ sap.ui.define([
 		var oModel = new JSONModel(todoList);
 		
 		this.getView().setModel(oModel,"todoList");
-	}	  
+  },
+ 
+  onAccept : function(oEventArgs){
+    let row = oEventArgs.getSource();
+    let context = row.getBindingContext("todoList");
+    let content = context.oModel.getProperty(context.sPath);
+
+    if(content.type === "todo"){
+      content.type = "doing";
+    }else if(content.type === "doing"){
+      content.type = "done";
+    }
+    
+    let oModel =this.getView().getModel("todoList").getData();
+    oModel.forEach(element => {
+      if(element.id === content.id){
+        element = content;
+      } 
+    });
+
+    this.getView().setModel(new JSONModel(oModel),"todoList");
+  },
+ 
+  onDelete : function(oEventArgs){
+    let row = oEventArgs.getSource();
+    let context = row.getBindingContext("todoList");
+    let content = context.oModel.getProperty(context.sPath);
+    
+    let oModel =this.getView().getModel("todoList").getData();
+    let temp = oModel.filter(item => content.id != item.id);
+
+    this.getView().setModel(new JSONModel(temp),"todoList");
+  }  
+
   });
 });
