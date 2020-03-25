@@ -10,6 +10,11 @@
 	<App id="idAppControl">
 		<pages>
 			<Page title="{i18n>title}">
+				<headerContent>
+				<Button
+					icon="sap-icon://add"
+					press="NavToAddTodoList" />
+				</headerContent>
 				<content>
  				<l:VerticalLayout content="{
 					 path : 'todoList>/', 
@@ -77,21 +82,6 @@
 										press="onDelete">
 									</Button>
 								</HBox>
-									<!-- <FlexBox
-										alignItems="Center"
-										direction="Column"
-										justifyContent="SpaceBetween">
-										<items id="{todoList>id}">
-											<Button type="Accept"
-												icon="sap-icon://accept" 
-												press="onAccept">										
-											</Button>
-											<Button type="Reject"
-												icon="sap-icon://delete"
-												press="onDelete">
-											</Button>
-										</items>
-									</FlexBox> -->
 							</VBox>
 						</f:content>
 					</f:Card>

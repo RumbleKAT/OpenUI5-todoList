@@ -65,7 +65,7 @@
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
 				"viewPath": "com.myorg.todoList.view",
-				"controlId": "app",
+				"controlId": "idAppControl",
 				"controlAggregation": "pages",
 				"async": true
 			},
@@ -73,12 +73,22 @@
 				"name": "RouteMainView",
 				"pattern": "RouteMainView",
 				"target": ["TargetMainView"]
+			},{
+				"name" : "AddTodoList",
+				"pattern" : "addTodoList",
+				"target" : ["addTodoList"]
 			}],
 			"targets": {
 				"TargetMainView": {
 					"viewType": "XML",
 					"viewLevel": 1,
 					"viewName": "MainView"
+				},
+				"addTodoList" : {
+					"viewType": "XML",
+					"viewPath" : "com.myorg.todoList.view",
+					"viewName" : "AddTodoList",
+					"viewLevel" : 2
 				}
 			}
 		}

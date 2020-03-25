@@ -2,12 +2,9 @@ sap.ui.define([], function() {
 	"use strict";
 	return {
 		init : function(){
-			jQuery.sap.require("jquery.sap.storage");
 			this._storage = jQuery.sap.storage(jQuery.sap.storage.Type.local);
 			let temp = this._storage.get("todoList");
-			console.log(temp);
 			if(temp){
-				console.log("!!");
 				this.todoList = JSON.parse(temp);
 			}else{
 				this.todoList = [

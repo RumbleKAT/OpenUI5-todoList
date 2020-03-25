@@ -1,0 +1,20 @@
+<mvc:View
+    controllerName="com.myorg.todoList.controller.AddTodoList"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <App id="idAppControl">
+        <Page id="addTodoList" 
+            title="{i18n>AddTodoList}" 
+            navButtonPress="onNavBack"
+            class="sapUiResponsiveContentPadding">
+            <headerContent>
+				<Button
+					icon="sap-icon://add"
+					press="NavToMain" />
+			</headerContent>
+            <content>
+                <label text="!!!"/>
+            </content>
+        </Page>
+    </App>
+</mvc:View>

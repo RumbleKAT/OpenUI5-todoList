@@ -46,7 +46,14 @@ sap.ui.define([
     models.setData(temp);
 
     this.getView().setModel(new JSONModel(temp),"todoList");
-  }  
+  },
+  NavToAddTodoList : function(){
+    console.log("!!");
+    this.getRouter().navTo("AddTodoList");
+  },
+  getRouter : function () {
+    return sap.ui.core.UIComponent.getRouterFor(this)
+  }
 
   });
 });
