@@ -31,6 +31,7 @@ sap.ui.define([
         element = content;
       } 
     });
+    models.setData(oModel);
 
     this.getView().setModel(new JSONModel(oModel),"todoList");
   },
@@ -42,6 +43,7 @@ sap.ui.define([
     
     let oModel =this.getView().getModel("todoList").getData();
     let temp = oModel.filter(item => content.id != item.id);
+    models.setData(temp);
 
     this.getView().setModel(new JSONModel(temp),"todoList");
   }  

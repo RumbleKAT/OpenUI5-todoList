@@ -28,22 +28,20 @@
 						</f:header>
 						<f:content>
 							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
-								<Text text="{todoList>description}"/>
-									<FlexBox
-										alignItems="Center"
-										direction="Column"
-										justifyContent="SpaceBetween">
-										<items id="{todoList>id}">
-											<Button type="Accept"
-												icon="sap-icon://accept" 
-												press="onAccept">										
-											</Button>
-											<Button type="Reject"
-												icon="sap-icon://delete"
-												press="onDelete">
-											</Button>
-										</items>
-									</FlexBox>
+								<VBox>
+									<Text text="{todoList>description}"/>
+									<Text text="{todoList>category}"/>
+								</VBox>
+								<HBox alignContent="Stretch">
+									<Button type="Accept"
+										icon="sap-icon://accept" 
+										press="onAccept">										
+									</Button>
+									<Button type="Reject"
+										icon="sap-icon://delete"
+										press="onDelete">
+									</Button>
+								</HBox>
 							</VBox>
 						</f:content>
 					</f:Card>
@@ -65,8 +63,21 @@
 						</f:header>
 						<f:content>
 							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
-								<Text text="{todoList>description}"/>
-									<FlexBox
+								<VBox>
+									<Text text="{todoList>description}"/>
+									<Text text="{todoList>category}"/>
+								</VBox>
+								<HBox alignContent="Stretch">
+									<Button type="Accept"
+										icon="sap-icon://accept" 
+										press="onAccept">										
+									</Button>
+									<Button type="Reject"
+										icon="sap-icon://delete"
+										press="onDelete">
+									</Button>
+								</HBox>
+									<!-- <FlexBox
 										alignItems="Center"
 										direction="Column"
 										justifyContent="SpaceBetween">
@@ -80,7 +91,7 @@
 												press="onDelete">
 											</Button>
 										</items>
-									</FlexBox>
+									</FlexBox> -->
 							</VBox>
 						</f:content>
 					</f:Card>
@@ -101,7 +112,10 @@
 						</f:header>
 						<f:content>
 							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
-								<Text text="{todoList>description}"/>
+								<VBox>
+									<Text text="{todoList>description}"/>
+									<Text text="{todoList>category}"/>
+								</VBox>
 							</VBox>
 						</f:content>
 					</f:Card>
