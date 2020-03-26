@@ -1,7 +1,11 @@
 <mvc:View
     controllerName="com.myorg.todoList.controller.AddTodoList"
     xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    >
     <App id="idAppControl">
         <Page id="addTodoList" 
             title="{i18n>AddTodoList}" 
@@ -13,7 +17,28 @@
 					press="NavToMain" />
 			</headerContent>
             <content>
-                <label text="!!!"/>
+                 <f:SimpleForm editable="false" layout="ResponsiveGridLayout" id="SimpleForm">
+				<f:content id="FormContent">
+				<core:Title text="Title"/>
+                    <VBox>
+                        <items>
+                            <HBox>
+                                	<Label text="Label 1" id="Label1"/>
+					                <Input width="100%" id="Input1" value="Input 1" enabled="false"/>
+                            </HBox>
+                            <HBox>
+                                	<Input width="100%"  id="Input2" value="Input 2" enabled="false"/>
+					                <Label text="Label 2" id="Label2"/>
+                            </HBox>
+                            <HBox>
+                                	<Input width="100%"  id="Input3" value="Input 3" enabled="false"/>
+                                     <Button text="click" press="onClick" />
+                            </HBox>
+                        </items>
+                    </VBox>
+				</f:content>
+			</f:SimpleForm>
+                        
             </content>
         </Page>
     </App>
