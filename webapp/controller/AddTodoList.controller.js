@@ -32,7 +32,10 @@ sap.ui.define([
             this.getView().setModel(categoriesJSON,'categories');
         },
         NavToMain(){
-            this.getRouter().navTo("RouteMainView",true);
+            var oRouter = this.getRouter();
+            oRouter.initialize(); // restart the router
+            oRouter.navTo('RouteMainView',true);
+            //this.getRouter().navTo("RouteMainView",true);
         },
         getRouter : function () {
           return sap.ui.core.UIComponent.getRouterFor(this)

@@ -16,14 +16,35 @@
 					press="NavToAddTodoList" />
 				</headerContent>
 				<content>
- 				<l:VerticalLayout content="{
+					<FlexBox
+					class="sapUiTinyMargin"
+					alignItems="Start">
+					<items>
+						<Title level="H2" text="Todo" class="sapUiSmallMarginEnd">
+							<layoutData>
+								<FlexItemData growFactor="1" />
+							</layoutData>
+						</Title>
+						<Title level="H2" text="Doing" class="sapUiSmallMarginEnd">
+							<layoutData>
+								<FlexItemData growFactor="1" />
+							</layoutData>
+						</Title>
+						<Title level="H2" text="Done" >
+							<layoutData>
+								<FlexItemData growFactor="1" />
+							</layoutData>
+						</Title>
+					</items>
+				</FlexBox>
+				<l:VerticalLayout content="{
 					 path : 'todoList>/', 
 					 filters : [ 
 				 		{ path : 'type', operator : 'EQ', value1 : 'todo' }
 					]
 				 }" width="33%">
 					<f:Card
-					class="sapUiMediumMargin"
+					class="sapUiSmallMargin"
 					width="300px"
 					>
 						<f:header>
@@ -59,7 +80,7 @@
 					]
 				 }" width="33%">
 					<f:Card
-					class="sapUiMediumMargin"
+					class="sapUiSmallMargin"
 					width="300px"
 					>
 						<f:header>
@@ -95,7 +116,7 @@
 					]
 				 }" width="33%">
 					<f:Card
-					class="sapUiMediumMargin"
+					class="sapUiSmallMargin"
 					width="300px">
 						<f:header>
 							<card:Header
