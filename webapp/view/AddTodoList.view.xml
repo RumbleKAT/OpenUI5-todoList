@@ -11,35 +11,44 @@
             title="{i18n>AddTodoList}" 
             navButtonPress="onNavBack"
             class="sapUiResponsiveContentPadding">
-            <headerContent>
-				<Button
-					icon="sap-icon://add"
-					press="NavToMain" />
-			</headerContent>
-            <content>
-                 <f:SimpleForm editable="false" layout="ResponsiveGridLayout" id="SimpleForm">
-				<f:content id="FormContent">
-				<core:Title text="Title"/>
-                    <VBox>
-                        <items>
-                            <HBox>
-                                	<Label text="Label 1" id="Label1"/>
-					                <Input width="100%" id="Input1" value="Input 1" enabled="false"/>
-                            </HBox>
-                            <HBox>
-                                	<Input width="100%"  id="Input2" value="Input 2" enabled="false"/>
-					                <Label text="Label 2" id="Label2"/>
-                            </HBox>
-                            <HBox>
-                                	<Input width="100%"  id="Input3" value="Input 3" enabled="false"/>
-                                     <Button text="click" press="onClick" />
-                            </HBox>
-                        </items>
-                    </VBox>
-				</f:content>
-			</f:SimpleForm>
-                        
-            </content>
+             <customHeader>
+                <Bar>
+                    <contentLeft>
+                        <Button icon="sap-icon://arrow-left" press="NavToMain" />
+                    </contentLeft>
+                    <contentMiddle>
+		                <Text text = "Add TodoList"></Text>
+                    </contentMiddle> 
+                </Bar>
+            </customHeader>
+            <Panel width="auto" headerText="Add TodoList">
+                <content>
+                    <f:SimpleForm layout="ResponsiveGridLayout" id="SimpleForm" editable="true" width="100%">
+                    <f:content id="FormContent">                    
+                        <VBox>
+                            <items>
+                                <Label text="Title" id="title"/>
+                                <Input width="100%" id="title_id" placeholder="Please write the title.."/>
+
+                                <Label text="Type" id="type"/>
+                                <ComboBox id="comboBox" items="{path: 'categories>/types'}" width="100%">
+                                    <items>
+                                        <core:Item key="{categories>name}" text="{categories>name}"/> 
+                                    </items>
+                                </ComboBox>
+                                <Label text="Description" id="description"/>
+                                <TextArea width="100%" rows="5" id="description_id" placeholder="Please write the description.."/>
+                            </items>
+                        </VBox>
+                    </f:content>
+                </f:SimpleForm>
+                <FlexBox alignItems ="Center" justifyContent="Center">
+                    <items>
+                            <Button width="100%" text="submit" press="onClick" />
+                    </items>
+                </FlexBox>
+                </content>
+            </Panel>
         </Page>
     </App>
 </mvc:View>

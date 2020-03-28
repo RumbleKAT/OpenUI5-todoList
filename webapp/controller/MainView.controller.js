@@ -10,7 +10,7 @@ sap.ui.define([
 		models.init();
 		var todoList = Object.assign([],models.getDatas());
 		var oModel = new JSONModel(todoList);
-		
+    console.log(todoList);
 		this.getView().setModel(oModel,"todoList");
   },
  

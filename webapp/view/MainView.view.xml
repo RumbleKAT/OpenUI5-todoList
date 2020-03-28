@@ -35,7 +35,6 @@
 							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
 								<VBox>
 									<Text text="{todoList>description}"/>
-									<Text text="{todoList>category}"/>
 								</VBox>
 								<HBox alignContent="Stretch">
 									<Button type="Accept"
@@ -70,7 +69,6 @@
 							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
 								<VBox>
 									<Text text="{todoList>description}"/>
-									<Text text="{todoList>category}"/>
 								</VBox>
 								<HBox alignContent="Stretch">
 									<Button type="Accept"
@@ -104,7 +102,6 @@
 							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
 								<VBox>
 									<Text text="{todoList>description}"/>
-									<Text text="{todoList>category}"/>
 								</VBox>
 							</VBox>
 						</f:content>

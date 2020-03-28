@@ -8,10 +8,10 @@ sap.ui.define([], function() {
 				this.todoList = JSON.parse(temp);
 			}else{
 				this.todoList = [
-					{ title : "한컴" , category : "study", id : 1,name:"song",type : "todo", description : "설명....."},
-					{ title: "song", category: "study", id: 5, name: "song",type: "done" ,description : "설명....."},
-					{ title: "song", category: "working", id: 4, name: "song", type : "doing" ,description : "설명....."},
-					{ title: "song", category: "study", id: 3, name: "song", type : "todo" ,description : "설명....."},
+					{ title : "한컴" , id : 1,name:"song",type : "todo", description : "설명....."},
+					{ title: "song", id: 5, name: "song",type: "done" ,description : "설명....."},
+					{ title: "song", id: 4, name: "song", type : "doing" ,description : "설명....."},
+					{ title: "song", id: 3, name: "song", type : "todo" ,description : "설명....."},
 				  ];
 			}
 		},
