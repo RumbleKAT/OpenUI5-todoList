@@ -36,16 +36,18 @@
 								<VBox>
 									<Text text="{todoList>description}"/>
 								</VBox>
-								<HBox alignContent="Stretch">
-									<Button type="Accept"
+								<FlexBox
+									alignItems="Start"
+									justifyContent="Center">
+									<items>
+										<Button type="Accept"
 										icon="sap-icon://accept" 
-										press="onAccept">										
-									</Button>
-									<Button type="Reject"
+										press="onAccept" class="sapUiSmallMarginEnd" />
+										<Button type="Reject"
 										icon="sap-icon://delete"
-										press="onDelete">
-									</Button>
-								</HBox>
+										press="onDelete" class="sapUiSmallMarginEnd" />
+									</items>
+								</FlexBox>
 							</VBox>
 						</f:content>
 					</f:Card>
@@ -70,16 +72,18 @@
 								<VBox>
 									<Text text="{todoList>description}"/>
 								</VBox>
-								<HBox alignContent="Stretch">
-									<Button type="Accept"
+								<FlexBox
+									alignItems="Start"
+									justifyContent="Center">
+									<items>
+										<Button type="Accept"
 										icon="sap-icon://accept" 
-										press="onAccept">										
-									</Button>
-									<Button type="Reject"
+										press="onAccept" class="sapUiSmallMarginEnd" />
+										<Button type="Reject"
 										icon="sap-icon://delete"
-										press="onDelete">
-									</Button>
-								</HBox>
+										press="onDelete" class="sapUiSmallMarginEnd" />
+									</items>
+								</FlexBox>
 							</VBox>
 						</f:content>
 					</f:Card>

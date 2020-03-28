@@ -8,12 +8,13 @@ sap.ui.define([
   return Controller.extend("com.myorg.todoList.controller.MainView", {
 	onInit : function(){
 		models.init();
-		var todoList = Object.assign([],models.getDatas());
+  },
+  onBeforeRendering : function(){
+    var todoList = Object.assign([],models.getDatas());
 		var oModel = new JSONModel(todoList);
     console.log(todoList);
 		this.getView().setModel(oModel,"todoList");
   },
- 
   onAccept : function(oEventArgs){
     let row = oEventArgs.getSource();
     let context = row.getBindingContext("todoList");
