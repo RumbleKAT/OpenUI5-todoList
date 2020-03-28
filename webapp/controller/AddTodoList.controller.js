@@ -20,12 +20,16 @@ sap.ui.define([
                     }
                 ]
             };
+            var dataObject = {
+                title: "",
+                type : "",
+                description : ""
+            }
+            var dataObjectJSON = new JSONModel(dataObject);
             var categoriesJSON = new JSONModel(categories);
-            console.log(categoriesJSON);
 
+            this.getView().setModel(dataObjectJSON);
             this.getView().setModel(categoriesJSON,'categories');
-
-            console.log(this.getView());
         },
         NavToMain(){
             this.getRouter().navTo("RouteMainView");
@@ -33,12 +37,40 @@ sap.ui.define([
         getRouter : function () {
           return sap.ui.core.UIComponent.getRouterFor(this)
         },
-        onClick : function(e){
-            console.log(e);
-            console.log(this.getView().byId("Input1").getValue());
+        onSave : function(){
+            var oModel = this.getView().getModel().getData();
+            
+            if(oModel.title === '' || oModel.type === ''  || oModel.description === '' ){
+                alert("please write all items!");   
+                this.onClear();
+                return;
+            }else if(!(oModel.type === "todo" || oModel.type === "doing" || oModel.type === "done" )){
+                alert("please select right item!");   
+                this.onClear();
+                return;
+            }
+            
+            //save item
+            var todoLists = models.getDatas();
+            const maxIdx = todoLists.sort((el1,el2)=>el2.id - el1.id);
+            const nextIdx = maxIdx[0].id + 1;
+            
+            oModel.id = nextIdx;
+            todoLists.push(oModel);
+
+            console.log(todoLists);
+            models.setData(todoLists);
+            alert("save success!");            
+            
+            this.onClear();
         },
-        getComboItem: function(){
-            console.log(this.getView().byId("comboBox").getValue());
+        onClear : function(){
+            var dataObject = {
+                title: "",
+                type : "",
+                description : ""
+            }
+            this.getView().setModel(new JSONModel(dataObject));
         }
     })
 })

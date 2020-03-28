@@ -71,7 +71,7 @@
 			},
 			"routes": [{
 				"name": "RouteMainView",
-				"pattern": "RouteMainView",
+				"pattern": "",
 				"target": ["TargetMainView"]
 			},{
 				"name" : "AddTodoList",

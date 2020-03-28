@@ -28,25 +28,29 @@
                         <VBox>
                             <items>
                                 <Label text="Title" id="title"/>
-                                <Input width="100%" id="title_id" placeholder="Please write the title.."/>
+                                <Input width="100%" id="title_id" placeholder="Please write the title.." value="{/title}"/>
 
                                 <Label text="Type" id="type"/>
-                                <ComboBox id="comboBox" items="{path: 'categories>/types'}" width="100%">
+                                <ComboBox id="comboBox" items="{path: 'categories>/types'}" width="100%" value="{/type}">
                                     <items>
                                         <core:Item key="{categories>name}" text="{categories>name}"/> 
                                     </items>
                                 </ComboBox>
                                 <Label text="Description" id="description"/>
-                                <TextArea width="100%" rows="5" id="description_id" placeholder="Please write the description.."/>
+                                <TextArea width="100%" value="{/description}" rows="5" id="description_id" placeholder="Please write the description.."/>
                             </items>
                         </VBox>
                     </f:content>
                 </f:SimpleForm>
-                <FlexBox alignItems ="Center" justifyContent="Center">
-                    <items>
-                            <Button width="100%" text="submit" press="onClick" />
-                    </items>
-                </FlexBox>
+                <FlexBox
+					height="100px"
+					alignItems="Start"
+					justifyContent="Center">
+					<items>
+						<Button width="100px" type="Accept" text="submit" press="onSave" class="sapUiSmallMarginEnd" />
+						<Button width="100px" type="Reject" text="clear" press="onClear" class="sapUiSmallMarginEnd" />
+					</items>
+				</FlexBox>
                 </content>
             </Panel>
         </Page>
