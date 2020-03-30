@@ -7,7 +7,14 @@ sap.ui.define([
 
   return Controller.extend("com.myorg.todoList.controller.MainView", {
 	onInit : function(){
-		models.init();
+    models.init();
+    let oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+    oRouter.attachRouteMatched(this._onObjectMatched, this);
+  },
+  _onObjectMatched: function(oEvent) {
+    var todoList = Object.assign([],models.getDatas());
+		var oModel = new JSONModel(todoList);
+    this.getView().setModel(oModel,"todoList");
   },
   onBeforeRendering : function(){
     var todoList = Object.assign([],models.getDatas());
@@ -50,7 +57,7 @@ sap.ui.define([
   },
   NavToAddTodoList : function(){
     console.log("!!");
-    this.getRouter().navTo("AddTodoList");
+    this.getRouter().navTo("AddTodoList",{}, false);
   },
   getRouter : function () {
     return sap.ui.core.UIComponent.getRouterFor(this)
