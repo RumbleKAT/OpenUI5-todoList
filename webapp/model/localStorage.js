@@ -23,6 +23,10 @@ sap.ui.define([], function() {
 		getDatas : function(){
 			return this.todoList;
 		},
+		deleteDataAll : function(){
+			this.todoList = [];
+			this.setData([]);
+		},
 		deleteData : function(id){
 			let leftData = JSON.parse(this.getDatas()).filter( element => element.id !== id);
 			this.setData(leftData);

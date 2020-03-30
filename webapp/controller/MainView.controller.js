@@ -54,7 +54,10 @@ sap.ui.define([
   },
   getRouter : function () {
     return sap.ui.core.UIComponent.getRouterFor(this)
+  },
+  clearAllData : function(){
+    models.deleteDataAll();
+    this.getView().setModel([],"todoList");
   }
-
   });
 });

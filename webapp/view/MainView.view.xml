@@ -14,6 +14,9 @@
 				<Button
 					icon="sap-icon://add"
 					press="NavToAddTodoList" />
+				<Button
+					icon="sap-icon://delete"
+					press="clearAllData" />
 				</headerContent>
 				<content>
 					<FlexBox

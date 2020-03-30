@@ -56,7 +56,13 @@ sap.ui.define([
             //save item
             var todoLists = models.getDatas();
             const maxIdx = todoLists.sort((el1,el2)=>el2.id - el1.id);
-            const nextIdx = maxIdx[0].id + 1;
+            let nextIdx = undefined;
+            console.log(maxIdx);
+            if(maxIdx.length === 0){
+                nextIdx = 1;
+            }else{
+                nextIdx = maxIdx[0].id + 1;
+            }
             
             oModel.id = nextIdx;
             todoLists.push(oModel);
