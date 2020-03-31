@@ -19,7 +19,7 @@
 					press="clearAllData" />
 				</headerContent>
 				<content>
-					<FlexBox
+					<!-- <FlexBox
 					class="sapUiTinyMargin"
 					alignItems="Start">
 					<items>
@@ -45,7 +45,7 @@
 					 filters : [ 
 				 		{ path : 'type', operator : 'EQ', value1 : 'todo' }
 					]
-				 }" width="33%">
+				 }" >
 					<f:Card
 					class="sapUiSmallMargin"
 					width="300px"
@@ -81,7 +81,7 @@
 					 filters : [ 
 				 		{ path : 'type', operator : 'EQ', value1 : 'doing' }
 					]
-				 }" width="33%">
+				 }" >
 					<f:Card
 					class="sapUiSmallMargin"
 					width="300px"
@@ -117,7 +117,7 @@
 					 filters : [ 
 				 		{ path : 'type', operator : 'EQ', value1 : 'done' }
 					]
-				 }" width="33%">
+				 }" >
 					<f:Card
 					class="sapUiSmallMargin"
 					width="300px">
@@ -134,7 +134,45 @@
 							</VBox>
 						</f:content>
 					</f:Card>
-				</l:VerticalLayout>
+				</l:VerticalLayout> -->
+				<Table id="idTable" items="{
+					 path : 'todoList>/'}">
+					<columns>
+						<Column hAlign="Center">
+							<Text text="TODO" />
+						</Column>
+						<Column hAlign="Center">
+							<Text text="DOING" />
+						</Column>
+						<Column hAlign="Center">
+							<Text text="DONE" />
+						</Column>
+					</columns>
+						<items content=" filters : [ 
+														{ path : 'type', operator : 'EQ', value1 : 'todo' }
+													]">
+							<ColumnListItem>
+								<cells>
+										<f:Card
+											class="sapUiSmallMargin"
+											width="300px">
+												<f:header>
+													<card:Header
+														title="{todoList>title}"
+														subtitle="{todoList>name}"/>
+												</f:header>
+												<f:content>
+													<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
+														<VBox>
+															<Text text="{todoList>description}"/>
+														</VBox>
+													</VBox>
+												</f:content>
+											</f:Card>
+								</cells>
+							</ColumnListItem>
+						</items>
+				</Table>
 				</content>
 			</Page>
 		</pages>
