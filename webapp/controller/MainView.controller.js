@@ -64,7 +64,8 @@ sap.ui.define([
   },
   clearAllData : function(){
     models.deleteDataAll();
-    this.getView().setModel([],"todoList");
+    let oModel = [];
+    this.getView().setModel(new JSONModel(oModel),"todoList");
   }
   });
 });
